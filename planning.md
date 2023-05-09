@@ -2,7 +2,6 @@ Trello Board:
 
 https://trello.com/b/5cBMkTby/good-days
 
-
 MVP Feature List:
 
 AAU, I want authentication to secure my personal journal.
@@ -48,3 +47,10 @@ Timeline View:
 Create/Edit Entry:
 
 <img width="851" alt="Screen Shot 2023-05-09 at 11 05 42 AM" src="https://github.com/mgballou/good-days-fe/assets/125108218/b5aa8f4b-740a-47ff-b448-47fde1dcda91">
+
+
+
+ERD:
+
+<img width="851" alt="Screen Shot 2023-05-09 at 11 10 18 AM" src="https://github.com/mgballou/good-days-fe/assets/125108218/4e80123d-6bf8-49ee-80e0-4dd641727c7c">
+
