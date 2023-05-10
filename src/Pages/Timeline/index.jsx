@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { getDays } from '../../utilities/day-services'
+import { getDays, createDay } from '../../utilities/day-services'
 
 import { Link } from 'react-router-dom'
+
 
 import Loading from '../../Components/Loading/Loading'
 import DayCard from '../../Components/DayCard/DayCard'
@@ -12,6 +13,10 @@ function Timeline(props){
     const [days, setDays] = useState(null)
 
     const [isLoading, setIsLoading] = useState(true)
+
+    const [newForm, setNewForm] = useState({
+        date: new Date()
+    })
     
 
     async function handleRequest(){
@@ -24,6 +29,25 @@ function Timeline(props){
             console.log(error)
             
         }
+    }
+
+    async function handleSubmit(evt){
+        evt.preventDefault()
+        try {
+            await createDay(newForm)
+            setIsLoading(true)
+            setNewForm({
+                date: new Date()
+            })
+            
+        } catch (error) {
+            console.log(error)
+            
+        }
+    }
+
+    function handleChange(evt){
+        setNewForm({ ...newForm, [evt.target.name]: evt.target.value })
     }
 
     function loaded(){
@@ -46,9 +70,18 @@ function Timeline(props){
         <section>
             <p> Timeline view</p>
 
-            <Link to="/timeline/create">
-            <button>Add a Day</button>
-            </Link>
+           <form onSubmit={handleSubmit}>
+            <label>Select a Day</label>
+            <input 
+            type="date" 
+            name="date" 
+            value ={newForm.date}
+            placeholder={newForm.date}
+            onChange={handleChange}
+            />
+            <button type="submit">Journal</button>
+           </form>
+           
             {isLoading ? <Loading/> : loaded()}
 
 
