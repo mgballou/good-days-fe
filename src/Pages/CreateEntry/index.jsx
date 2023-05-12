@@ -1,9 +1,9 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import { useParams } from 'react-router'
 
 import { useNavigate } from 'react-router-dom'
 
-import { format } from 'date-fns'
+// import { format } from 'date-fns'
 
 import { createEntry } from '../../utilities/entry-services'
 

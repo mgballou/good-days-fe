@@ -15,7 +15,7 @@ import Loading from '../../Components/Loading/Loading'
 
 function Day(props) {
     const { id } = useParams()
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [day, setDay] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [newForm, setNewForm] = useState({
@@ -109,7 +109,7 @@ function Day(props) {
         )
     }
 
-    useEffect(() => { handleRequest() }, [isLoading])
+    useEffect(() => {handleRequest()}, [isLoading])
 
     return (
         <>

@@ -1,4 +1,4 @@
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { deleteEntry } from '../../utilities/entry-services'
 
