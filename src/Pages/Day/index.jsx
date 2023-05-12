@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 import { getDay, updateDay } from '../../utilities/day-services'
@@ -109,6 +109,7 @@ function Day(props) {
         )
     }
 
+    
     useEffect(() => {handleRequest()}, [isLoading])
 
     return (
