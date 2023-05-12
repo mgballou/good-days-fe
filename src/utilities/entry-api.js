@@ -24,7 +24,7 @@ export async function create(id, data){
 
     } catch(error){
         console.log(error)
-        return err
+        return error
     }
 }
 
