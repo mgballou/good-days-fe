@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL     
+const BASE_URL = process.env.REACT_APP_DAYS_URL     
 
 
 
@@ -41,8 +41,61 @@ export async function create(data){
             throw new Error("Invalid POST Request")
         }
 
-    } catch(err){
-        console.log(err)
-        return err
+    } catch(error){
+        console.log(error)
+        return error
+    }
+}
+
+
+export async function detail(id){
+    try {
+        const options = {
+            method: 'GET'
+        } 
+        const url = `${BASE_URL}/${id}`
+        const response = await fetch(url, options)
+        
+        if(response.ok){
+            return response.json()
+        } else {
+            throw new Error("Invalid Request")
+        }
+        
+    } catch (error) {
+        console.log(error)
+        return error
+    }
+    
+    
+    
+
+}
+
+export async function update(id, data){
+    try {
+        console.log(data)
+        const options = {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        } 
+        const url = `${BASE_URL}/${id}`
+        console.log(url)
+        const response = await fetch(url, options)
+        console.log(response)
+
+        if(response.ok){
+            return response.json()
+        } else {
+            throw new Error("Invalid Request")
+        }
+        
+    } catch (error) {
+        console.log(error)
+        return error
+        
     }
 }

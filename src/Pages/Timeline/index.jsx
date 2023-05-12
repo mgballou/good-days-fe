@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
+
+
 import { getDays, createDay } from '../../utilities/day-services'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 import Loading from '../../Components/Loading/Loading'
@@ -17,6 +19,8 @@ function Timeline(props){
     const [newForm, setNewForm] = useState({
         date: new Date()
     })
+
+    const navigate = useNavigate()
     
 
     async function handleRequest(){
@@ -34,11 +38,18 @@ function Timeline(props){
     async function handleSubmit(evt){
         evt.preventDefault()
         try {
-            await createDay(newForm)
-            setIsLoading(true)
-            setNewForm({
-                date: new Date()
-            })
+            const newDay = await createDay(newForm)
+            // setIsLoading(true)
+            // setNewForm({
+            //     date: new Date()
+            // })
+            console.log(newDay)
+            if (newDay._id){
+                navigate(`/timeline/${newDay._id}`)
+
+            } else {
+                //display error message on screen here
+            }
             
         } catch (error) {
             console.log(error)
