@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom'
 
 import { format } from 'date-fns'
 
-function DayCard({day}){
+function DayCard({day, setIsLoading}){
     const entriesArray = day.entries?.map((entry) => {
         return (
             <EntryCard 
             key={entry._id}
-            entry={entry}/>
+            entry={entry}
+            setIsLoading={setIsLoading}/>
         )
     })
 

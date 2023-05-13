@@ -1,13 +1,13 @@
 import {useNavigate} from 'react-router-dom';
 import {useState, useContext} from 'react';
 
-import { register } from '../../utilities/auth-services';
+import { login } from '../../utilities/auth-services';
 import { setUserToken } from '../../utilities/auth-token';
 
 import { UserContext } from '../../data';
 
-function Register(props){
-    const [registerForm, setRegisterForm] = useState(
+function Login (props){
+    const [loginForm, setLoginForm] = useState(
         { username: "",
          password: ""})
     const {setUser} = useContext(UserContext)
@@ -16,19 +16,19 @@ function Register(props){
     async function handleSubmit(evt){
         evt.preventDefault()
         try {
-            const newUser = await register(registerForm)
-            
+            const incomingUser = await login(loginForm)
+            console.log(incomingUser)
            
          
-            if (newUser.token){
+            if (incomingUser.token){
                 navigate('/timeline')
-                setUserToken(newUser.token)
-                setUser(newUser.user)
-                setRegisterForm({ username: "",
+                setUserToken(incomingUser.token)
+                setUser(incomingUser.user)
+                setLoginForm({ username: "",
                 password: ""})
 
             } else {
-                navigate('/register')
+                navigate('/Login')
             }
             
         } catch (error) {
@@ -38,26 +38,26 @@ function Register(props){
     }
 
     function handleChange(evt){
-        setRegisterForm({ ...registerForm, [evt.target.name]: evt.target.value })
+        setLoginForm({ ...loginForm, [evt.target.name]: evt.target.value })
     }
 
     return (
         <section>
-            <h4>Create an account</h4>
+            <h4>Log In</h4>
             <form
             onSubmit={handleSubmit}>
-                <label>email</label>
+                <label>username</label>
                 <input 
                 type="text"
                 name="username"
-                value={registerForm.username}
+                value={loginForm.username}
                 onChange={handleChange}
                 />
                 <label>password</label>
                 <input 
                 type="password"
                 name="password"
-                value={registerForm.password}
+                value={loginForm.password}
                 onChange={handleChange}
                 />
                 <button type="submit">Create account</button>
@@ -68,4 +68,4 @@ function Register(props){
     )
 }
 
-export default Register
+export default Login

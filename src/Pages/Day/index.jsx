@@ -26,7 +26,8 @@ function Day(props) {
         return (
             <EntryCard
                 key={entry._id}
-                entry={entry} />
+                entry={entry} 
+                setIsLoading={setIsLoading}/>
         )
     })
 
@@ -62,6 +63,7 @@ function Day(props) {
             if (updatedDay._id) {
                 // navigate(`/timeline/${updatedDay._id}`)
                 setIsLoading(true)
+                setNewForm({newFlag: ""})
 
             } else {
                 //display error message on screen here
