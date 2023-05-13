@@ -8,6 +8,7 @@ function Header(props){
             <nav>
                 <Link to="/">Home</Link>
                 <Link to="/timeline">Timeline</Link>
+                <Link to="/register">Register</Link>
 
             </nav>
         </header>
