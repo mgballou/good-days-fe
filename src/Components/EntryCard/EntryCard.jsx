@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { deleteEntry } from '../../utilities/entry-services'
 
-function EntryCard({entry}) {
+function EntryCard({entry, setIsLoading}) {
     
     const navigate = useNavigate()
 
@@ -13,7 +13,7 @@ function EntryCard({entry}) {
             console.log(deleteResponse)
             
             if (deleteResponse._id){
-                navigate(`/timeline`)
+                setIsLoading(true)
 
             } else {
                 throw new Error("Unable to complete this request")

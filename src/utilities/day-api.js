@@ -1,12 +1,17 @@
-const BASE_URL = process.env.REACT_APP_DAYS_URL     
+import { getUserToken } from "./auth-token"       
 
+const BASE_URL = process.env.REACT_APP_DAYS_URL
 
 
 export async function index(){
     try {
         const options = {
 
-            method: 'GET'
+            method: 'GET',
+            headers: {
+
+                "Authorization": `bearer ${getUserToken()}`
+            }
         }
         const response = await fetch(BASE_URL, options)
         
@@ -28,7 +33,8 @@ export async function create(data){
         const options = {
             method: 'POST',
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `bearer ${getUserToken()}`
             },
             body: JSON.stringify(data)
         } 
@@ -51,7 +57,10 @@ export async function create(data){
 export async function detail(id){
     try {
         const options = {
-            method: 'GET'
+            method: 'GET',
+            headers: {
+                "Authorization": `bearer ${getUserToken()}`
+            }
         } 
         const url = `${BASE_URL}/${id}`
         const response = await fetch(url, options)
@@ -78,7 +87,8 @@ export async function update(id, data){
         const options = {
             method: 'PUT',
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `bearer ${getUserToken()}`
             },
             body: JSON.stringify(data)
         } 
