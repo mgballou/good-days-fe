@@ -14,7 +14,7 @@ export async function registerUser(data){
             body: JSON.stringify(data)
         }
         const response = await fetch(url, options)
-        conaole.log(response)
+        console.log(response)
 
         if(response.ok){
             return response.json()
@@ -41,7 +41,7 @@ export async function loginUser(data){
             body: JSON.stringify(data)
         }
         const response = await fetch(url, options)
-        conaole.log(response)
+        console.log(response)
 
         if(response.ok){
             return response.json()
