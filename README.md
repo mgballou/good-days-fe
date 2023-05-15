@@ -69,7 +69,8 @@ Back End:
 Mongoose, MongoDB  
 Passport, Passport-JWT  
 BCrpyt  
-Axios  
+Axios 
+FakerAPI - https://fakerapi.it/en
 
     
 To set up this application to run in your local environment, you'll need to clone down this repository as well as the backend repository linked above.  
