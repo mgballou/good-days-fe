@@ -1,6 +1,6 @@
 # Good Days
 
-Good Days is a mental health tracking and journaling applpication meant to encourage mindful reflections throughout one's day.
+Good Days is a mental health tracking and journaling application meant to encourage mindful reflections throughout one's day.
 
 Good Days is a full-stack MERN application primarily built during a 1-week sprint as a solo developer. This repo houses general README info for frontend and backend, but the backend code is available here - https://github.com/mgballou/good-days-be
 
