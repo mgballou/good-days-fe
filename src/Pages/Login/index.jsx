@@ -28,7 +28,7 @@ function Login (props){
                 password: ""})
 
             } else {
-                navigate('/Login')
+                navigate('/login')
             }
             
         } catch (error) {
