@@ -63,8 +63,7 @@ function Timeline(props) {
 
     function handleChange(evt) {
         
-        const dateParts = evt.target.value.split("-")
-        const formattedDate = dateParts[0] + "/" + dateParts[1] + "/" + dateParts[2]
+    
         setNewForm({ ...newForm, [evt.target.name]: evt.target.value})
     }
 
