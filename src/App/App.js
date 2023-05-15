@@ -1,5 +1,5 @@
+// import './App.css'
 
-import './App.css';
 
 
 import { UserContext } from '../data';
@@ -14,7 +14,8 @@ function App() {
   const { Provider: UserInfo } = UserContext
   const [currentUser, setCurrentUser] = useState(null)
   return (
-    <div className="App">
+    
+    <div className='h-screen bg-slate-700 text-neutral-100'>
       <UserInfo value={{
         user: currentUser,
         setUser: setCurrentUser
@@ -22,10 +23,8 @@ function App() {
         <Header />
         <Main />
       </UserInfo>
-
-
-
     </div>
+    
   );
 }
 
