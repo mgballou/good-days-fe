@@ -5,6 +5,7 @@ export async function registerUser(data){
 
     try {
         const url = `${BASE_URL}/register`
+        console.log(url)
         const options = {
             method: "POST",
             headers: {
@@ -13,6 +14,7 @@ export async function registerUser(data){
             body: JSON.stringify(data)
         }
         const response = await fetch(url, options)
+        conaole.log(response)
 
         if(response.ok){
             return response.json()
@@ -30,6 +32,7 @@ export async function registerUser(data){
 export async function loginUser(data){
     try {
         const url = `${BASE_URL}/login`
+        console.log(url)
         const options = {
             method: "POST",
             headers: {
@@ -38,6 +41,7 @@ export async function loginUser(data){
             body: JSON.stringify(data)
         }
         const response = await fetch(url, options)
+        conaole.log(response)
 
         if(response.ok){
             return response.json()
