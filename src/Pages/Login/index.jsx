@@ -17,7 +17,6 @@ function Login (props){
         evt.preventDefault()
         try {
             const incomingUser = await login(loginForm)
-            console.log(incomingUser)
            
          
             if (incomingUser.token){
