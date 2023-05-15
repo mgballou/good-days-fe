@@ -42,25 +42,26 @@ function Login (props){
     }
 
     return (
-        <section>
-            <h4>Log In</h4>
-            <form
+        <section className="container mx-auto bg-purple-300/25 h-3/4 my-12 flex flex-col items-center rounded-3xl">
+            <h4 className='font-bold my-16'>Connect to your Journals</h4>
+            <form className='flex flex-col max-w-lg mx-auto items-center'
             onSubmit={handleSubmit}>
-                <label>username</label>
-                <input 
+                <label className='mb-4'>username</label>
+                <input className='text-black p-2 rounded'
                 type="text"
                 name="username"
                 value={loginForm.username}
                 onChange={handleChange}
                 />
-                <label>password</label>
-                <input 
+                <label className='my-4'>password</label>
+                <input
+                className='text-black p-2 rounded' 
                 type="password"
                 name="password"
                 value={loginForm.password}
                 onChange={handleChange}
                 />
-                <button type="submit">Create account</button>
+                <button className="mt-8 border border-purple-800 px-4 py-2 rounded-lg  bg-purple-300 text-purple-800 hover:bg-purple-600/50 hover:text-white hover:border-white transition-duration-300"  type="submit">Log In</button>
 
             </form>
 

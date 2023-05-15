@@ -16,7 +16,9 @@ function Logout(props){
     useEffect(() => {clearUserInfo()}, [])
 
     return (
-        <p>Successfully logged out</p>
+        <section className="container mx-auto bg-purple-300/25 h-3/4 my-12 flex flex-col items-center rounded-3xl">
+            <p>Successfully logged out</p>
+        </section>
     )
 }
 
